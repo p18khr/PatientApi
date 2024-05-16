@@ -33,7 +33,6 @@ public class patientController {
 
 	@GetMapping
 	public List<Patient> getAll(){
-
 		return service.getAll();
 	}
 
