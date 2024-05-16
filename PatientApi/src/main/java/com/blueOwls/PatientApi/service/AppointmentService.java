@@ -8,9 +8,5 @@ import java.util.Optional;
 
 public interface AppointmentService {
 
-	Appointment saveAppointment(Appointment appointment);
-
-	List<Appointment> getAll();
-
-	Optional<Appointment> getOne(int id);
+	List<Appointment> getOne(int patient_id);
 }

@@ -22,8 +22,6 @@ public class Appointment {
 
 	Date date;
 	Time time;
-
-	@Column(name = "patientId")
 	int patient_id;
 
 }

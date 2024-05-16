@@ -20,20 +20,9 @@ public class AppointmentServiceImpl implements AppointmentService {
 	private AppointmentRepository repo;
 
 
-	@Override
-	public Appointment saveAppointment(Appointment appointment) {
-		repo.save(appointment);
-		return appointment;
-	}
 
 	@Override
-	public List<Appointment> getAll() {
-		List<Appointment> appointments = repo.findAll();
-		return appointments;
-	}
-
-	@Override
-	public Optional<Appointment> getOne(int id) {
-		return repo.findById(id);
+	public List<Appointment> getOne(int patient_id) {
+		return repo.findAppointment(patient_id);
 	}
 }

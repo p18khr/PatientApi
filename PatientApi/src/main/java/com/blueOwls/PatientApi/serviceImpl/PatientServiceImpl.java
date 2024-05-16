@@ -25,6 +25,11 @@ public class PatientServiceImpl implements PatientService {
 
 	@Override
 	public Patient savePatient(Patient patient) {
+		Appointment appointment = new Appointment();
+		appointment.setPatient_id(patient.getId());
+		appointment.setDate(patient.getDate());
+		appointment.setTime(patient.getTime());
+		Apprepo.save(appointment);
 		repo.save(patient);
 		return patient;
 	}
@@ -38,15 +43,7 @@ public class PatientServiceImpl implements PatientService {
 	@Override
 	public Patient getOne(int id) {
 		Patient patient = repo.findPatient(id);
-        List<Appointment> appointments = Apprepo.findAll();
-		List<Appointment> finalList = new ArrayList<>();
-
-		for (int i=0;i<appointments.size();i++){
-                if(id == appointments.get(i).getPatient_id()){
-					 finalList.add(appointments.get(i));
-                }
-		}
-		patient.setAppointments(finalList);
+		patient.setAppointments(Apprepo.findAppointment(id));
         return patient;
 	}
 }

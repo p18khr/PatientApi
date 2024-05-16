@@ -16,22 +16,17 @@ public class appointmentController {
 	@Autowired
 	private AppointmentService service;
 
-	@PostMapping
-	public Appointment saveAppointment(@RequestBody Appointment appointment){
-		service.saveAppointment(appointment);
-		return appointment;
-	}
 
-	@GetMapping("/{id}")
-	public Optional<Appointment> getAppointment(@PathVariable int id){
+//	@GetMapping("/{patient_id}")
+//	public List<Appointment> getAppointment(@PathVariable int patient_id){
+//
+//		return service.getOne(patient_id);
+//	}
 
-		return service.getOne(id);
-	}
-
-	@GetMapping
-	public List<Appointment> getAll(){
-
-		return service.getAll();
-	}
+//	@GetMapping
+//	public List<Appointment> getAll(){
+//
+//		return service.getAll();
+//	}
 
 }

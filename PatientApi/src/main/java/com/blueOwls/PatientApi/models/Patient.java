@@ -4,6 +4,8 @@ package com.blueOwls.PatientApi.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.sql.Date;
+import java.sql.Time;
 import java.util.List;
 
 @Getter
@@ -17,13 +19,19 @@ public class Patient {
 
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 
 	String name;
 	String phone;
 	String email;
 	int age;
+
+	@Transient
+	Date date;
+
+	@Transient
+	Time time;
+
 
 	@Transient
 	List<Appointment> appointments;
