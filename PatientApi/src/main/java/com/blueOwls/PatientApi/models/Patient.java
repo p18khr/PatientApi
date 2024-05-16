@@ -22,6 +22,7 @@ public class Patient {
 
 	String name;
 	String phone;
+	String email;
 	int age;
 
 	@Transient
