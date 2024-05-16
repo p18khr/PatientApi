@@ -22,7 +22,6 @@ public class Appointment {
 
 	Date date;
 	Time time;
-	float fee;
 
 	@Column(name = "patientId")
 	int patient_id;
