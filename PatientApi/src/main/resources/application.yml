@@ -17,16 +17,16 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
 
-  ## oauth2 configuration
-  security:
-    oauth2:
-      client:
-        registration:
-          google:
-            client_name: google
-            client-id: 965748550192-bf7ffokjjbpshgvn1htamvghvm573b3k.apps.googleusercontent.com
-            client-secret: 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
-            scope: email,profile
+#  ## oauth2 configuration
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          google:
+#            client_name: google
+#            client-id: 965748550192-bf7ffokjjbpshgvn1htamvghvm573b3k.apps.googleusercontent.com
+#            client-secret: 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
+#            scope: email,profile
 
 
 
