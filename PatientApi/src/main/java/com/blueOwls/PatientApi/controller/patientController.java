@@ -22,17 +22,7 @@ public class patientController {
 		return patient;
 	}
 
-	@GetMapping("/{id}")
-	public Patient getPatient(@PathVariable int id){
 
-		return service.getOne(id);
-	}
-
-	@GetMapping("/name")
-	public List<Patient> getPatientByName(@RequestBody Patient patient){
-
-		return service.getByName(patient.getName());
-	}
 
 	@GetMapping
 	public List<Patient> getAll(){
