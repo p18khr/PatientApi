@@ -11,4 +11,6 @@ public interface PatientService {
 	List<Patient> getAll();
 
 	Patient getOne(int id);
+
+	List<Patient> getByName(String name);
 }

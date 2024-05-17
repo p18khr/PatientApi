@@ -1,15 +1,12 @@
 package com.blueOwls.PatientApi.controller;
 
 
-import com.blueOwls.PatientApi.models.Appointment;
 import com.blueOwls.PatientApi.models.Patient;
-import com.blueOwls.PatientApi.service.AppointmentService;
 import com.blueOwls.PatientApi.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @CrossOrigin("http://localhost:3000/")
 @RestController
@@ -29,6 +26,12 @@ public class patientController {
 	public Patient getPatient(@PathVariable int id){
 
 		return service.getOne(id);
+	}
+
+	@GetMapping("/name")
+	public List<Patient> getPatientByName(@RequestBody Patient patient){
+
+		return service.getByName(patient.getName());
 	}
 
 	@GetMapping

@@ -37,6 +37,9 @@ public class PatientServiceImpl implements PatientService {
 	@Override
 	public List<Patient> getAll() {
     List<Patient> patients = repo.findAll();
+	for(int i =0;i<patients.size();i++){
+		patients.get(i).setAppointments(Apprepo.findAppointment(patients.get(i).getId()));
+	}
 	return patients;
 	}
 
@@ -45,5 +48,14 @@ public class PatientServiceImpl implements PatientService {
 		Patient patient = repo.findPatient(id);
 		patient.setAppointments(Apprepo.findAppointment(id));
         return patient;
+	}
+
+	@Override
+	public List<Patient> getByName(String name) {
+		List<Patient> patients = repo.findPatientByName(name);
+		for(int i =0;i<patients.size();i++){
+			patients.get(i).setAppointments(Apprepo.findAppointment(patients.get(i).getId()));
+		}
+		return patients;
 	}
 }

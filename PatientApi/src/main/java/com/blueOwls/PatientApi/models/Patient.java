@@ -4,8 +4,8 @@ package com.blueOwls.PatientApi.models;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.sql.Date;
 import java.sql.Time;
+import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -27,10 +27,10 @@ public class Patient {
 	int age;
 
 	@Transient
-	Date date;
+	String date;
 
 	@Transient
-	Time time;
+	String time;
 
 
 	@Transient

@@ -3,8 +3,10 @@ package com.blueOwls.PatientApi.models;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.sql.Time;
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.util.Date;
+import java.util.Timer;
+
 
 @Getter
 @Setter
@@ -20,8 +22,9 @@ public class Appointment {
 	int id;
 
 
-	Date date;
-	Time time;
+	String date;
+	String time;
 	int patient_id;
+	float fee = 400.00F;
 
 }
